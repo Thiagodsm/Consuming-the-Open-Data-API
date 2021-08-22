@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ConsumingApiPortalDaTransparencia.Models.DepBasicDescription>
+
+@{
+    ViewBag.Title = "DepResume";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DepResume</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idLegislatura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siglaPartido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.siglaUf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uriPartido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urlFoto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.href)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idLegislatura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siglaPartido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.siglaUf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uriPartido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.urlFoto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.href)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
