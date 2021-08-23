@@ -1,7 +1,8 @@
-﻿@model IEnumerable<ConsumingApiPortalDaTransparencia.Models.Deputados>
+﻿@using ConsumingApiPortalDaTransparencia.Models;
+@model IEnumerable<ConsumingApiPortalDaTransparencia.Models.Deputados>
 
 @{
-    ViewBag.Title = "DepResume";
+    ViewBag.Title = "Resumo dos deputados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,8 +15,8 @@
     <tr>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
+@foreach (var item in Model) 
+{
     <tr>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

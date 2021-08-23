@@ -38,8 +38,9 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
                     depList = JsonConvert.DeserializeObject<Deputados> (EmpResponse);
                     //depList = JsonConvert.DeserializeObject<IEnumerable<Deputados>>(EmpResponse);
                 }
+                IEnumerable<Deputados> depIEnumerable = new[] { depList };
                 //returning the employee list to view
-                return View(depList);
+                return View(depIEnumerable);
             }
             #region t2
             /*
