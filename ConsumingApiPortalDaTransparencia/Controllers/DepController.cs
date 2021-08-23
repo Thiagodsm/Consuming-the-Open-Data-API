@@ -13,8 +13,9 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
 {
     public class DepController : Controller
     {
-        public Task<ActionResult> DepResume()
+        public ActionResult DepResume()
         {
+            //IEnumerable<Deputados> depList = null;
             List<DepBasicDescription> depList = null;
 
             using (var handler = new HttpClientHandler())
@@ -24,15 +25,18 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 // HTTP GET
-                //var responseTask = client.GetAsync("deputados");
-                HttpRequestMessage responseTask = await client.GetAsync("deputados");
-                //responseTask.Wait();
+                var responseTask = client.GetAsync("deputados");
+                responseTask.Wait();
+                //HttpRequestMessage responseTask = await client.GetAsync("deputados");
+
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<IEnumerable<Deputados>>();
-                    readTask.Wait();
-                    depList = readTask.Result;
+                    var streamTask = client.GetStreamAsync("deputados");
+                    var repositories = await JsonSerializer.DeserializeAsync<List<DepBasicDescription>>(await streamTask);
+                    //var readTask = result.Content.ReadAsAsync<List<Deputados>>();
+                    //readTask.Wait();
+                    //depList = readTask.Result;
                 }
                 else // web api sent error response
                 {
