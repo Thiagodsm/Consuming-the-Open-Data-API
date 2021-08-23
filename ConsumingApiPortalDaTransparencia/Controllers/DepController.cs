@@ -17,7 +17,9 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
         string Baseurl = "https://dadosabertos.camara.leg.br/api/v2/";
         public async Task<ActionResult> DepResume()
         {
+            //IEnumerable<Deputados> depList = null;
             Deputados depList = new Deputados();
+
             using (var client = new HttpClient())
             {
                 //Passing service base url
@@ -33,7 +35,8 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
                     //Storing the response details recieved from web api
                     var EmpResponse = Res.Content.ReadAsStringAsync().Result;
                     //Deserializing the response recieved from web api and storing into the Employee list
-                    depList = JsonConvert.DeserializeObject<Deputados>(EmpResponse);
+                    depList = JsonConvert.DeserializeObject<Deputados> (EmpResponse);
+                    //depList = JsonConvert.DeserializeObject<IEnumerable<Deputados>>(EmpResponse);
                 }
                 //returning the employee list to view
                 return View(depList);
