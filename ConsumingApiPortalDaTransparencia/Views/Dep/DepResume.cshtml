@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ConsumingApiPortalDaTransparencia.Models.DepBasicDescription>
+﻿@model IEnumerable<ConsumingApiPortalDaTransparencia.Models.DadosBasicosDep>
 
 @{
     ViewBag.Title = "DepResume";
@@ -36,15 +36,6 @@
         <th>
             @Html.DisplayNameFor(model => model.urlFoto)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.href)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.rel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.type)
-        </th>
         <th></th>
     </tr>
 
@@ -73,15 +64,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.urlFoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.href)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.type)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
