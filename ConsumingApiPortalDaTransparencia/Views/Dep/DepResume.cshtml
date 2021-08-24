@@ -1,9 +1,10 @@
 ﻿@using ConsumingApiPortalDaTransparencia.Models;
-@model IEnumerable<ConsumingApiPortalDaTransparencia.Models.Deputados>
+@model  ConsumingApiPortalDaTransparencia.Models.Deputados
 
 @{
     ViewBag.Title = "Resumo dos deputados";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Deputados depList = Model;
 }
 
 <h2>DepResume</h2>
@@ -11,57 +12,46 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<div class="row">
+    @for (int i = 0; i < 3; i++)
+    {
+        <div class="col-lg-4" style="width: 18rem;">
+            <img class="card-img-top" src=@depList.dados[i].urlFoto alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@depList.dados[i].nome</h5>
+                <p class="card-text">Deputado federal pelo Partido @depList.dados[i].siglaPartido do estado de @depList.dados[i].siglaUf .</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Email: @depList.dados[i].email</li>
+                <!--<li class="list-group-item">pibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                -->
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    }
+</div>
+
+
 <table class="table">
     <tr>
         <th></th>
     </tr>
-@foreach (var item in Model) 
-{
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>
 
-<div class="row">
-    <div class="container">
-        <nav>
-            <br>
-            <ul class="pagination">
-                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                <li><a href="#">A</a></li>
-                <li class="active"><a href="#">B <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">C</a></li>
-                <li><a href="#">D</a></li>
-                <li><a href="#">E</a></li>
-                <li><a href="#">F</a></li>
-                <li><a href="#">G</a></li>
-                <li><a href="#">H</a></li>
-                <li><a href="#">I</a></li>
-                <li class="disabled"><span class="hint--bottom hint--always" data-hint="Disabled button when no record to show">J</span></li>
-                <li class="disabled"><span>K</span></li>
-                <li><a href="#">L</a></li>
-                <li><a href="#">M</a></li>
-                <li><a href="#">N</a></li>
-                <li><a href="#">O</a></li>
-                <li><a href="#">P</a></li>
-                <li><a href="#">Q</a></li>
-                <li><a href="#">R</a></li>
-                <li><a href="#">S</a></li>
-                <li><a href="#">T</a></li>
-                <li><a href="#">U</a></li>
-                <li><a href="#">V</a></li>
-                <li class="disabled"><a href="#">W</a></li>
-                <li class="disabled"><a href="#">X</a></li>
-                <li class="disabled"><a href="#">Y</a></li>
-                <li><a href="#">Z</a></li>
-                <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
