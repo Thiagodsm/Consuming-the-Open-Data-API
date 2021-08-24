@@ -7,7 +7,7 @@
     Deputados depList = Model;
 }
 
-<h2>DepResume</h2>
+<h2>Resumo dos deputados</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -16,42 +16,55 @@
 <div class="row">
     @for (int i = 0; i < 3; i++)
     {
-        <div class="col-lg-4" style="width: 18rem;">
+        <div class="col-md-4">
             <img class="card-img-top" src=@depList.dados[i].urlFoto alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">@depList.dados[i].nome</h5>
-                <p class="card-text">Deputado federal pelo Partido @depList.dados[i].siglaPartido do estado de @depList.dados[i].siglaUf .</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Email: @depList.dados[i].email</li>
-                <!--<li class="list-group-item">pibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                -->
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <p class="card-text">Deputado Federal: @depList.dados[i].nome pelo Partido @depList.dados[i].siglaPartido pelo estado @depList.dados[i].siglaUf</p>
             </div>
         </div>
     }
 </div>
 
+    @*
+        <div class="row">
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="col-md-4" style="width: 18rem;">
+                    <img class="card" src=@depList.dados[i].urlFoto alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@depList.dados[i].nome</h5>
+                        <p class="card-text">Deputado federal pelo Partido @depList.dados[i].siglaPartido do estado de @depList.dados[i].siglaUf .</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Email: @depList.dados[i].email</li>
+                        <!--<li class="list-group-item">pibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        -->
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            }
+        </div>
 
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
 
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-    }
+            <table class="table">
+                <tr>
+                    <th></th>
+                </tr>
+                @foreach (var item in depList.dados)
+                {
 
-</table>
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>
+                    </tr>
+                }
 
+            </table>
+    *@
