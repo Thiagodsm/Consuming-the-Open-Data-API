@@ -1,12 +1,49 @@
-﻿@using X.PagedList.Mvc;
-@model X.PagedList.PagedList<ConsumingApiPortalDaTransparencia.Models.Deputados>
+﻿@using X.PagedList;
+@using X.PagedList.Mvc;
+@using ConsumingApiPortalDaTransparencia.Models;
+@model X.PagedList.PagedList<ConsumingApiPortalDaTransparencia.Models.DadosBasicosDep>
 
-@{ 
+@{
     ViewBag.Title = "Deputados";
+    //DadosBasicosDep deputados = Model;
 }
 
 <h2>Resumo dos deputados</h2>
 
+<divc class="row">
+    <div class="col-md-12">
+        <table>
+            <tr>
+                <td>Nome</td>
+            </tr>
+            <tr>
+                <td>Nome</td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</divc>
+
+<div class="row">
+    <div class="col-md-8">
+        @Html.PagedListPager(Model, page => Url.Action("DepResumo", new { page }))
+    </div>
+    <div class="col-md-4">
+        <span class="pull-right">
+            Listando deputados @Model.FirstItemOnPage a @Model.LastItemOnPage de um total de @Model.TotalItemCount
+        </span>
+    </div>
+</div>
 @*
     @using ConsumingApiPortalDaTransparencia.Models;
     @model  ConsumingApiPortalDaTransparencia.Models.Deputados
