@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using ConsumingApiPortalDaTransparencia.Models;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using System.IO;
+using X.PagedList;
 
 namespace ConsumingApiPortalDaTransparencia.Controllers.api
 {
@@ -15,7 +15,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
     {
         //Hosted web API REST Service base url
         string Baseurl = "https://dadosabertos.camara.leg.br/api/v2/";
-        public async Task<ActionResult> DepResume()
+        public async Task<ActionResult> DepResume(int page = 1)
         {
             //IEnumerable<Deputados> depList = null;
             Deputados depList = new Deputados();
@@ -41,7 +41,9 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
                 //IEnumerable<Deputados> depIEnumerable = new[] { depList };
                 //returning the employee list to view
                 //return View(depIEnumerable);
-                return View(depList);
+                var deputados = depList.dados.OrderBy(p => p.id).ToPagedList(page, 10);
+                return View(deputados);
+                //return View(depList);
             }
             #region t2
             /*
