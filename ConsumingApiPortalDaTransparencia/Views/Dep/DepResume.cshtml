@@ -1,11 +1,10 @@
 ﻿@using X.PagedList;
-@using X.PagedList.Mvc;
+@using X.PagedList.Mvc.Core;
 @using ConsumingApiPortalDaTransparencia.Models;
 @model X.PagedList.PagedList<ConsumingApiPortalDaTransparencia.Models.DadosBasicosDep>
 
 @{
     ViewBag.Title = "Deputados";
-    //DadosBasicosDep deputados = Model;
 }
 
 <h2>Resumo dos deputados</h2>
@@ -17,7 +16,7 @@
                 <td>Nome</td>
             </tr>
             <tr>
-                <td>Nome</td>
+                <td>Dado</td>
             </tr>
             @foreach (var item in Model)
             {
