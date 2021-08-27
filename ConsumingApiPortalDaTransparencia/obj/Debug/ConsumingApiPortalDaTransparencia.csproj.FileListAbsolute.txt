@@ -185,7 +185,6 @@ C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDa
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\bin\System.Web.WebPages.Deployment.xml
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\bin\System.Web.WebPages.Razor.xml
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\bin\Antlr3.Runtime.pdb
-C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.csprojAssemblyReference.cache
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.csproj.CoreCompileInputs.cache
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.csproj.CopyComplete
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.dll

@@ -14,7 +14,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
     public class DepController : Controller
     {
         //Hosted web API REST Service base url
-        string Baseurl = "https://dadosabertos.camara.leg.br/api/v2/";
+        readonly string Baseurl = "https://dadosabertos.camara.leg.br/api/v2/";
         public async Task<ActionResult> DepResume(int page = 1)
         {
             //IEnumerable<Deputados> depList = null;
