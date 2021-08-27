@@ -189,3 +189,4 @@ C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDa
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.csproj.CopyComplete
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.dll
 C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.pdb
+C:\Users\thiag\Desktop\c#\ConsumingApiPortalDaTransparencia\ConsumingApiPortalDaTransparencia\obj\Debug\ConsumingApiPortalDaTransparencia.csprojAssemblyReference.cache

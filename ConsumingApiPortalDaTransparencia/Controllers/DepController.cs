@@ -41,7 +41,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers.api
                 //IEnumerable<Deputados> depIEnumerable = new[] { depList };
                 //returning the employee list to view
                 //return View(depIEnumerable);
-                var deputados = depList.dados.OrderBy(p => p.id).ToPagedList(page, 10);
+                var deputados = depList.dados.OrderBy(p => p.nome).ToPagedList(page, 10);
                 return View(deputados);
                 //return View(depList);
             }
