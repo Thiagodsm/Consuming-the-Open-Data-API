@@ -1,7 +1,6 @@
-﻿@using X.PagedList;
-@using X.PagedList.Mvc.Core;
-@using ConsumingApiPortalDaTransparencia.Models;
-@model X.PagedList.PagedList<ConsumingApiPortalDaTransparencia.Models.DadosBasicosDep>
+﻿@model PagedList.IPagedList<ConsumingApiPortalDaTransparencia.Models.DadosBasicosDep>
+@using X.PagedList.Mvc;
+
 
 @{
     ViewBag.Title = "Deputados";
@@ -35,7 +34,7 @@
 
 <div class="row">
     <div class="col-md-8">
-        @Html.PagedListPager(Model, page => Url.Action("DepResumo", new { page }))
+        @Html.PagedListPager(Model, page => Url.Action("DepResume", new { page }))
     </div>
     <div class="col-md-4">
         <span class="pull-right">
