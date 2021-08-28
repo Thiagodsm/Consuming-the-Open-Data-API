@@ -6,19 +6,39 @@
 }
 
 <h3 class="text-uppercase">Resumo dos deputados</h3>
-<div class="row">
+<!--<div class="row">-->
+<div class="panel-group" id="accordionPanelsStayOpen">
     @foreach (var info in Model)
     {
-        <div class="alert alert-secondary rounded-0">
-            <a href="@info.uri" class="link" target="_blank">@info.nome</a> <span class="pull-right text-primary"><i class="fa fa-calendar"></i> Partido: @info.siglaPartido</span>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#@info.id">
+                        @info.nome
+                    </a>
+                </h4>
+            </div>
+            <div id="">
+
+            </div>
+            
         </div>
     }
 
-<ul class="pagination">
-    @Html.PagedListPager(Model, page => Url.Action("DepResume", new { page }))
-
-</ul>
+    <ul class="pagination">
+        @Html.PagedListPager(Model, page => Url.Action("DepResume", new { page }))
+    </ul>
 </div>
+
+
+
+
+@*
+    <div class="alert alert-secondary rounded-0">
+        <a href="@info.uri" class="link" target="_blank">@info.nome</a> <span class="pull-right text-primary"><i class="fa fa-calendar"></i> Partido: @info.siglaPartido</span>
+    </div>
+    -->
+*@
 
 
 @*
