@@ -4,7 +4,7 @@
 
 @model IEnumerable<ConsumingApiPortalDaTransparencia.Models.Deputados>
 
-<div class="jumbotron">
+<!--<div class="jumbotron">
     <h1 class="display-4">API de Dados Abertos</h1>
     <p class="lead">O Dados Abertos da Câmara pode ser utilizado para acompanhar a tramitação e as votações de projetos e pareceres, verificar a atuação e os gastos do deputado que você ajudou a eleger, descobrir os eventos realizados pelas comissões, e muito mais!</p>
     <hr class="my-4">
@@ -13,7 +13,80 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </p>
 </div>
+-->
 
+<div class="jumbotron text-center">
+    <h1>Dados Abertos</h1>
+    <p>Dados fornecidos pela API de Dados Abertos da Câmara dos Deputados</p>
+</div>
+
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">O que é uma API</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>O que são dos Dados Abertos?</h2>
+            <p>
+                ASP.NET MVC gives you a powerful.
+            </p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">Saiba mais &raquo;</button>
+            <div id="demo" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2>Qual a utilidade?</h2>
+            <p>NuGet is a free Visual Studio.</p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo1">Saiba mais &raquo;</button>
+            <div id="demo1" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2>Proposta do sistema</h2>
+            <p>You can easily find a web hosting.</p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo2">Saiba mais &raquo;</button>
+            <div id="demo2" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2>Objetivo Geral</h2>
+            <p>You can easily find a web hosting.</p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo3">Saiba mais &raquo;</button>
+            <div id="demo3" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+            </div>
+        </div>
+    </div>
+</div>
+
+<@*
 <div class="row">
     <div class="col-lg-4" style="width: 35rem;">
         <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204536.jpg" alt="Card image cap">
@@ -91,6 +164,7 @@
         <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
     </div>
 </div>
+     *@
 
 <!--
 <div class="page-header">
