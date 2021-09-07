@@ -9,9 +9,9 @@
 <ul class="pagination alpha">
     @foreach (var link in Model.Alphabet)
     {
-        if (Model.FirstLetters.Contains(link) || (Model.NamesStartWithNumbers && link == "0-9") || link == "All")
+        if (Model.FirstLetters.Contains(link) || (Model.NamesStartWithNumbers && link == "0-9") || link == "Todos")
         {
-            if (Model.SelectedLetter == link || Model.SelectedLetter.IsEmpty() && link == "All")
+            if (Model.SelectedLetter == link || Model.SelectedLetter.IsEmpty() && link == "Todos")
             {
                 <li class="page-item active"><a class="page-link" href="#">@link</a></li>
 

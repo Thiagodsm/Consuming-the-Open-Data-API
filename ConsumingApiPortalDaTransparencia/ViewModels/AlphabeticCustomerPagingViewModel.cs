@@ -14,7 +14,7 @@ namespace ConsumingApiPortalDaTransparencia.ViewModels
             get
             {
                 var alphabet = Enumerable.Range(65, 26).Select(i => ((char)i).ToString()).ToList();
-                alphabet.Insert(0, "All");
+                alphabet.Insert(0, "Todos");
                 return alphabet;
             }
         }

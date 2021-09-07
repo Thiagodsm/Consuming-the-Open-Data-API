@@ -46,7 +46,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                 .Select(x => x.Key.ToUpper())
                 .ToList();
 
-                if (string.IsNullOrEmpty(selectedLetter) || selectedLetter == "All")  
+                if (string.IsNullOrEmpty(selectedLetter) || selectedLetter == "Todos")  
             {  
                 viewModel.depName = depList.dados 
                     .Select(c => c.nome)  
