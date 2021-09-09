@@ -28,14 +28,14 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                 client.DefaultRequestHeaders.Clear();
                 //Define request data format
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                //Sending request to find web api REST service resource GetAllEmployees using HttpClient
+                //Sending request to find web api REST service resource GetAllDeputados using HttpClient
                 HttpResponseMessage Res = await client.GetAsync("deputados");
                 //Checking the response is successful or not which is sent using HttpClient
                 if (Res.IsSuccessStatusCode)
                 {
                     //Storing the response details recieved from web api
                     var response = Res.Content.ReadAsStringAsync().Result;
-                    //Deserializing the response recieved from web api and storing into the Employee list
+                    //Deserializing the response recieved from web api and storing into the Deputados list
                     depList = JsonConvert.DeserializeObject<Deputados> (response);
                     //depList = JsonConvert.DeserializeObject<IEnumerable<Deputados>>(EmpResponse);
                 }
@@ -47,29 +47,29 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                 .ToList();
 
                 if (string.IsNullOrEmpty(selectedLetter) || selectedLetter == "Todos")  
-            {  
+                {  
                 viewModel.depName = depList.dados 
                     .Select(c => c.nome)  
                     .ToList();  
-            }  
-            else  
-            {  
-                if (selectedLetter == "0-9")  
-                {  
-                    var numbers = Enumerable.Range(0, 10).Select(i => i.ToString());  
-                    viewModel.depName = depList.dados
-                        .Where(p => numbers.Contains(p.nome.Substring(0, 1)))  
-                        .Select(p => p.nome)  
-                        .ToList();  
                 }  
                 else  
                 {  
-                    viewModel.depName = depList.dados  
-                        .Where(p => p.nome.StartsWith(selectedLetter))  
-                        .Select(p => p.nome)  
-                        .ToList();  
-                }  
-            }
+                    if (selectedLetter == "0-9")  
+                    {  
+                        var numbers = Enumerable.Range(0, 10).Select(i => i.ToString());  
+                        viewModel.depName = depList.dados
+                            .Where(p => numbers.Contains(p.nome.Substring(0, 1)))  
+                            .Select(p => p.nome)  
+                            .ToList();  
+                    }  
+                    else  
+                    {  
+                        viewModel.depName = depList.dados  
+                            .Where(p => p.nome.StartsWith(selectedLetter))  
+                            .Select(p => p.nome)  
+                            .ToList();  
+                    }  
+                }
                 return View(viewModel);
             }
         }
