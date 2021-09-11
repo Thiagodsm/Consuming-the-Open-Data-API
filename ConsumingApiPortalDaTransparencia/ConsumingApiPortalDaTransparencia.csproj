@@ -337,7 +337,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DadosBasicosDep.cs" />
-    <Compile Include="Models\DepBasicDescription.cs" />
     <Compile Include="Models\Deputados.cs" />
     <Compile Include="Models\LinkDep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

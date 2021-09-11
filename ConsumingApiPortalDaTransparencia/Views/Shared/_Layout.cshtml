@@ -20,6 +20,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("Contato", "Contact", "Home")</li>*@
+                    <li>@Html.ActionLink("Deputados", "DepResume", "Dep")</li>
+                    <li>@Html.ActionLink("Partidos", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Votações", "Index", "Home")</li>
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Cadastros <span class="caret"></span>
@@ -32,12 +37,6 @@
                             <li>@Html.ActionLink("Cidades", "Cidade", "Cadastro")</li>
                         </ul>
                     </li>
-
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Deputados", "DepResume", "Dep")</li>
-                    <li>@Html.ActionLink("Partidos", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Votações", "Index", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right"
                     >

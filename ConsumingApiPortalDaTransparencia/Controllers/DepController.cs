@@ -37,7 +37,6 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                     var response = Res.Content.ReadAsStringAsync().Result;
                     //Deserializing the response recieved from web api and storing into the Deputados list
                     depList = JsonConvert.DeserializeObject<Deputados> (response);
-                    //depList = JsonConvert.DeserializeObject<IEnumerable<Deputados>>(EmpResponse);
                 }
                 var viewModel = new AlphabeticCustomerPagingViewModel { SelectedLetter = selectedLetter };
 
@@ -48,9 +47,11 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
 
                 if (string.IsNullOrEmpty(selectedLetter) || selectedLetter == "Todos")  
                 {  
-                viewModel.depName = depList.dados 
-                    .Select(c => c.nome)  
-                    .ToList();  
+                    viewModel.depName = depList.dados 
+                        .Select(c => c.nome)  
+                        .ToList();
+
+                    viewModel.listaDeputados = depList.dados;
                 }  
                 else  
                 {  
@@ -60,14 +61,25 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                         viewModel.depName = depList.dados
                             .Where(p => numbers.Contains(p.nome.Substring(0, 1)))  
                             .Select(p => p.nome)  
-                            .ToList();  
+                            .ToList(); 
+                        
+                        viewModel.listaDeputados = depList.dados
+                            .Where(p => numbers.Contains(p.nome.Substring(0, 1)))
+                            .Select(p => p)
+                            .ToList();
+
                     }  
                     else  
                     {  
                         viewModel.depName = depList.dados  
                             .Where(p => p.nome.StartsWith(selectedLetter))  
                             .Select(p => p.nome)  
-                            .ToList();  
+                            .ToList(); 
+                        
+                        viewModel.listaDeputados = depList.dados
+                            .Where(p => p.nome.StartsWith(selectedLetter))
+                            .Select(p => p)
+                            .ToList();
                     }  
                 }
                 return View(viewModel);

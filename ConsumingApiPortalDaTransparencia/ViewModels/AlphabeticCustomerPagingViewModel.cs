@@ -9,6 +9,9 @@ namespace ConsumingApiPortalDaTransparencia.ViewModels
     public class AlphabeticCustomerPagingViewModel
     {
         public List<string> depName { get; set; }
+
+        public List<DadosBasicosDep> listaDeputados { get; set; }
+
         public IList<string> Alphabet
         {
             get
