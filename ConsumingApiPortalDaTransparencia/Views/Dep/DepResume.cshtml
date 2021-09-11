@@ -30,12 +30,35 @@
     }
 </ul>
 
-<ul class="list-group">
-    @foreach (var item in Model.listaDeputados)
-    {
-        <li class="list-group-item list-group-item-primary">@item.nome</li>
-    }
-</ul>
+<div class="panel-group" id="accordion">
+    @foreach (var item in Model.listaDeputados) {
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#@item.id.ToString()">
+                        @item.nome
+                    </a>
+                </h4>
+            </div>
+            <div id=@item.id.ToString() class="panel-collapse collapse">
+                <div class="panel-body">
+                    Deputado Federal pelo estado @item.siglaUf 
+                </div>
+            </div>
+        </div>
+       }
+</div>
+
+
+
+@*
+    <ul class="list-group">
+        @foreach (var item in Model.listaDeputados)
+        {
+            <li class="list-group-item list-group-item-primary"><a href="#">@item.nome</a></li>
+        }
+    </ul>
+*@
 
 
 

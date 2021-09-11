@@ -22,7 +22,15 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @*<li>@Html.ActionLink("Contato", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("Deputados", "DepResume", "Dep")</li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Deputados <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Deputados Resumo", "DepResume", "Dep")</li>
+                        </ul>
+                    </li>
+                    @*<li>@Html.ActionLink("Deputados", "DepResume", "Dep")</li>*@
                     <li>@Html.ActionLink("Partidos", "Index", "Home")</li>
                     <li>@Html.ActionLink("Votações", "Index", "Home")</li>
                     <li>
