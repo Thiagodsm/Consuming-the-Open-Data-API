@@ -330,7 +330,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\api\DeputadosController.cs" />
     <Compile Include="Controllers\DepController.cs" />
     <Compile Include="Controllers\DepDespesasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
