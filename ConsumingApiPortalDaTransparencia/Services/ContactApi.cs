@@ -13,11 +13,11 @@ namespace ConsumingApiPortalDaTransparencia.Services
 {
     public class ContactApi
     {
-        public async Task<dynamic> MakeRequest(Object objectType, string path)
+        public async Task<dynamic> MakeRequest(object objectType, string path)
         {
             //Hosted web API REST Service base url
             string Baseurl = "https://dadosabertos.camara.leg.br/api/v2/";
-            object objectResponse = null;
+            dynamic objectResponse = null;
 
             using (var client = new HttpClient())
             {
@@ -34,7 +34,7 @@ namespace ConsumingApiPortalDaTransparencia.Services
                     //Storing the response details recieved from web api
                     var response = Res.Content.ReadAsStringAsync().Result;
                     //Deserializing the response recieved from web api and storing into the object
-                    objectResponse = JsonConvert.DeserializeObject(response);
+                    objectResponse = JsonConvert.DeserializeObject(response, objectType.GetType());
                 }
             }
             return objectResponse;
