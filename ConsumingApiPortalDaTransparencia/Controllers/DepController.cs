@@ -17,13 +17,11 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
     {
         public async Task<ActionResult> DepResume(string selectedLetter)
         {
-            //IEnumerable<Deputados> depList = null;
             Deputados depList = new Deputados();
-
             ContactApi service = new ContactApi();
 
             depList = await service.MakeRequest(depList, "deputados");
-
+            #region funciona
             /*using (var client = new HttpClient())
             {
                 //Passing service base url
@@ -42,6 +40,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                     depList = JsonConvert.DeserializeObject<Deputados> (response);
                 }
             */
+            #endregion
             var viewModel = new AlphabeticCustomerPagingViewModel { SelectedLetter = selectedLetter };
 
             viewModel.FirstLetters = depList.dados
@@ -90,7 +89,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
             //}
         }
 
-        
+        //[ChildActionOnly]
         public async Task<ActionResult> DepDetails(int? id)
         {
             DeputadosInfoDetalhada info = new DeputadosInfoDetalhada();
@@ -99,7 +98,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
 
             info = await service.MakeRequest(info, $"deputados/{id.ToString()}");
 
-            return PartialView(info);
+            return View(info);
         }
     }
 }

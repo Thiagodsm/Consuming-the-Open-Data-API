@@ -14,18 +14,15 @@
             if (Model.SelectedLetter == link || Model.SelectedLetter.IsEmpty() && link == "Todos")
             {
                 <li class="page-item active"><a class="page-link" href="#">@link</a></li>
-
             }
             else
             {
                 <li class="page-item">@Html.ActionLink(link, "DepResume", new { selectedLetter = link }, new { @class = "page-link" })</li>
-
             }
         }
         else
         {
             <li class="page-item inactive"><a class="page-link" href="#">@link</a></li>
-
         }
     }
 </ul>
@@ -36,7 +33,7 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#@item.id.ToString()">
-                        @Html.ActionLink(item.nome, "DepDetails", "Dep", new {id = item.id}, null)
+                        @Html.ActionLink(item.nome, "DepDetails", "Dep", new { id = item.id }, null)
                     </a>
                 </h4>
             </div>
