@@ -26,7 +26,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
 
             depList = await service.MakeRequest(depList, "deputados");
 
-            using (var client = new HttpClient())
+            /*using (var client = new HttpClient())
             {
                 //Passing service base url
                 client.BaseAddress = new Uri(Baseurl);
@@ -43,6 +43,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                     //Deserializing the response recieved from web api and storing into the Deputados list
                     depList = JsonConvert.DeserializeObject<Deputados> (response);
                 }
+            */
                 var viewModel = new AlphabeticCustomerPagingViewModel { SelectedLetter = selectedLetter };
 
                 viewModel.FirstLetters = depList.dados
@@ -88,7 +89,7 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                     }  
                 }
                 return View(viewModel);
-            }
+            //}
         }
 
         
@@ -96,25 +97,11 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
         {
             DeputadosInfoDetalhada info = new DeputadosInfoDetalhada();
 
-            using (var client = new HttpClient())
-            {
-                //Passing service base url
-                client.BaseAddress = new Uri(Baseurl);
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                //Sending request to find web api REST service resource GetAllDeputados using HttpClient
-                HttpResponseMessage Res = await client.GetAsync($"deputados/{id.ToString()}");
-                //Checking the response is successful or not which is sent using HttpClient
-                if (Res.IsSuccessStatusCode)
-                {
-                    //Storing the response details recieved from web api
-                    var response = Res.Content.ReadAsStringAsync().Result;
-                    //Deserializing the response recieved from web api and storing into the Deputados list
-                    info = JsonConvert.DeserializeObject<DeputadosInfoDetalhada>(response);
-                }
-            }
-                return PartialView(info);
+            ContactApi service = new ContactApi();
+
+            info = await service.MakeRequest(info, $"deputados/{id.ToString()}");
+
+            return PartialView(info);
         }
     }
 }
