@@ -9,6 +9,7 @@ using ConsumingApiPortalDaTransparencia.ViewModels;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using X.PagedList;
+using ConsumingApiPortalDaTransparencia.Services;
 
 namespace ConsumingApiPortalDaTransparencia.Controllers
 {
@@ -20,6 +21,10 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
         {
             //IEnumerable<Deputados> depList = null;
             Deputados depList = new Deputados();
+
+            ContactApi service = new ContactApi();
+
+            depList = await service.MakeRequest(depList, "deputados");
 
             using (var client = new HttpClient())
             {
@@ -84,6 +89,32 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                 }
                 return View(viewModel);
             }
+        }
+
+        
+        public async Task<ActionResult> DepDetails(int? id)
+        {
+            DeputadosInfoDetalhada info = new DeputadosInfoDetalhada();
+
+            using (var client = new HttpClient())
+            {
+                //Passing service base url
+                client.BaseAddress = new Uri(Baseurl);
+                client.DefaultRequestHeaders.Clear();
+                //Define request data format
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //Sending request to find web api REST service resource GetAllDeputados using HttpClient
+                HttpResponseMessage Res = await client.GetAsync($"deputados/{id.ToString()}");
+                //Checking the response is successful or not which is sent using HttpClient
+                if (Res.IsSuccessStatusCode)
+                {
+                    //Storing the response details recieved from web api
+                    var response = Res.Content.ReadAsStringAsync().Result;
+                    //Deserializing the response recieved from web api and storing into the Deputados list
+                    info = JsonConvert.DeserializeObject<DeputadosInfoDetalhada>(response);
+                }
+            }
+                return PartialView(info);
         }
     }
 }

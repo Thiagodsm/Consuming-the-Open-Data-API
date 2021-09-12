@@ -339,8 +339,10 @@
     <Compile Include="Models\DadosBasicosDep.cs" />
     <Compile Include="Models\Deputados.cs" />
     <Compile Include="Models\DeputadosDespesas.cs" />
+    <Compile Include="Models\DeputadosInfoDetalhada.cs" />
     <Compile Include="Models\LinkDep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ContactApi.cs" />
     <Compile Include="ViewModels\AlphabeticCustomerPagingViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -386,6 +388,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Dep\DepResume.cshtml" />
+    <Content Include="Views\Dep\DepDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
