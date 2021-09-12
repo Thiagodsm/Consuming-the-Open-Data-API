@@ -15,8 +15,6 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
 {
     public class DepController : Controller
     {
-        //Hosted web API REST Service base url
-        readonly string Baseurl = "https://dadosabertos.camara.leg.br/api/v2/";
         public async Task<ActionResult> DepResume(string selectedLetter)
         {
             //IEnumerable<Deputados> depList = null;
@@ -44,51 +42,51 @@ namespace ConsumingApiPortalDaTransparencia.Controllers
                     depList = JsonConvert.DeserializeObject<Deputados> (response);
                 }
             */
-                var viewModel = new AlphabeticCustomerPagingViewModel { SelectedLetter = selectedLetter };
+            var viewModel = new AlphabeticCustomerPagingViewModel { SelectedLetter = selectedLetter };
 
-                viewModel.FirstLetters = depList.dados
-                .GroupBy(c => c.nome.Substring(0, 1))
-                .Select(x => x.Key.ToUpper())
-                .ToList();
+            viewModel.FirstLetters = depList.dados
+            .GroupBy(c => c.nome.Substring(0, 1))
+            .Select(x => x.Key.ToUpper())
+            .ToList();
 
-                if (string.IsNullOrEmpty(selectedLetter) || selectedLetter == "Todos")  
+            if (string.IsNullOrEmpty(selectedLetter) || selectedLetter == "Todos")  
+            {  
+                viewModel.depName = depList.dados 
+                    .Select(c => c.nome)  
+                    .ToList();
+
+                viewModel.listaDeputados = depList.dados;
+            }  
+            else  
+            {  
+                if (selectedLetter == "0-9")  
                 {  
-                    viewModel.depName = depList.dados 
-                        .Select(c => c.nome)  
+                    var numbers = Enumerable.Range(0, 10).Select(i => i.ToString());  
+                    viewModel.depName = depList.dados
+                        .Where(p => numbers.Contains(p.nome.Substring(0, 1)))  
+                        .Select(p => p.nome)  
+                        .ToList(); 
+                        
+                    viewModel.listaDeputados = depList.dados
+                        .Where(p => numbers.Contains(p.nome.Substring(0, 1)))
+                        .Select(p => p)
                         .ToList();
 
-                    viewModel.listaDeputados = depList.dados;
                 }  
                 else  
                 {  
-                    if (selectedLetter == "0-9")  
-                    {  
-                        var numbers = Enumerable.Range(0, 10).Select(i => i.ToString());  
-                        viewModel.depName = depList.dados
-                            .Where(p => numbers.Contains(p.nome.Substring(0, 1)))  
-                            .Select(p => p.nome)  
-                            .ToList(); 
+                    viewModel.depName = depList.dados  
+                        .Where(p => p.nome.StartsWith(selectedLetter))  
+                        .Select(p => p.nome)  
+                        .ToList(); 
                         
-                        viewModel.listaDeputados = depList.dados
-                            .Where(p => numbers.Contains(p.nome.Substring(0, 1)))
-                            .Select(p => p)
-                            .ToList();
-
-                    }  
-                    else  
-                    {  
-                        viewModel.depName = depList.dados  
-                            .Where(p => p.nome.StartsWith(selectedLetter))  
-                            .Select(p => p.nome)  
-                            .ToList(); 
-                        
-                        viewModel.listaDeputados = depList.dados
-                            .Where(p => p.nome.StartsWith(selectedLetter))
-                            .Select(p => p)
-                            .ToList();
-                    }  
-                }
-                return View(viewModel);
+                    viewModel.listaDeputados = depList.dados
+                        .Where(p => p.nome.StartsWith(selectedLetter))
+                        .Select(p => p)
+                        .ToList();
+                }  
+            }
+            return View(viewModel);
             //}
         }
 
