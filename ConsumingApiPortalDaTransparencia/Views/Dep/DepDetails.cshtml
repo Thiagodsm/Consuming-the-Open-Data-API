@@ -13,7 +13,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Voltar", "Index", "Home", null, new { @class = "btn btn-primary btn-large" })
+    @Html.ActionLink("Voltar", null, null, null, new { @class = "btn btn-primary btn-large", href = Request.UrlReferrer })
 </p>
 
 <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
