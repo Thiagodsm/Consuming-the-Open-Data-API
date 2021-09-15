@@ -5,16 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Resumo detalhado</h2>
+<h2>Resumo detalhado dos deputados</h2>
 
 <div>
-    <h4>DeputadosInfoDetalhada</h4>
     <hr />
     <dl class="dl-horizontal">
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Voltar", "Index", "Home", null, new { @class = "btn btn-primary btn-large" })
 </p>
 
 <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
