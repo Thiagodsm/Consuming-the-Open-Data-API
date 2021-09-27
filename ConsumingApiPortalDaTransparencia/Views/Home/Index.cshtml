@@ -4,6 +4,81 @@
 
 @model IEnumerable<ConsumingApiPortalDaTransparencia.Models.Deputados>
 
+<!-- Header-->
+<header class="py-5">
+    <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="m-4 m-lg-5">
+                <h1 class="display-5 fw-bold">A warm welcome!</h1>
+                <p class="fs-4">Bootstrap utility classes are used to create this jumbotron since the old component has been removed from the framework. Why create custom CSS when you can use utilities?</p>
+                <a class="btn btn-primary btn-lg" href="#!">Call to action</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Page Content-->
+<section class="pt-4">
+    <div class="container px-lg-5">
+        <!-- Page Features-->
+        <div class="row gx-lg-5">
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
+                        <h2 class="fs-4 fw-bold">Fresh new layout</h2>
+                        <p class="mb-0">With Bootstrap 5, we've created a fresh new layout for this template!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
+                        <h2 class="fs-4 fw-bold">Free to download</h2>
+                        <p class="mb-0">As always, Start Bootstrap has a powerful collectin of free templates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
+                        <h2 class="fs-4 fw-bold">Jumbotron hero header</h2>
+                        <p class="mb-0">The heroic part of this template is the jumbotron hero header!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-bootstrap"></i></div>
+                        <h2 class="fs-4 fw-bold">Feature boxes</h2>
+                        <p class="mb-0">We've created some custom feature boxes using Bootstrap icons!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-code"></i></div>
+                        <h2 class="fs-4 fw-bold">Simple clean code</h2>
+                        <p class="mb-0">We keep our dependencies up to date and squash bugs as they come!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xxl-4 mb-5">
+                <div class="card bg-light border-0 h-100">
+                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-patch-check"></i></div>
+                        <h2 class="fs-4 fw-bold">A name you trust</h2>
+                        <p class="mb-0">Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!--<div class="jumbotron">
     <h1 class="display-4">API de Dados Abertos</h1>
     <p class="lead">O Dados Abertos da Câmara pode ser utilizado para acompanhar a tramitação e as votações de projetos e pareceres, verificar a atuação e os gastos do deputado que você ajudou a eleger, descobrir os eventos realizados pelas comissões, e muito mais!</p>
@@ -14,225 +89,87 @@
     </p>
 </div>
 -->
+@{
+    #region html antigo
+    /*
 
-<div class="jumbotron text-center">
-    <h1>Dados Abertos</h1>
-    <p>Dados fornecidos pela API de Dados Abertos da Câmara dos Deputados</p>
-</div>
-
-<div class="container">
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">O que é uma API</button>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-
-        </div>
+    <div class="jumbotron text-center">
+        <h1>Dados Abertos</h1>
+        <p>Dados fornecidos pela API de Dados Abertos da Câmara dos Deputados</p>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <h2>O que são dos Dados Abertos?</h2>
-            <p>
-                ASP.NET MVC gives you a powerful.
-            </p>
-            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">Saiba mais &raquo;</button>
-            <div id="demo" class="collapse">
-                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
-            </div>
-        </div>
-        <div class="col-md-3">
-            <h2>Qual a utilidade?</h2>
-            <p>NuGet is a free Visual Studio.</p>
-            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo1">Saiba mais &raquo;</button>
-            <div id="demo1" class="collapse">
-                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
-            </div>
-        </div>
-        <div class="col-md-3">
-            <h2>Proposta do sistema</h2>
-            <p>You can easily find a web hosting.</p>
-            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo2">Saiba mais &raquo;</button>
-            <div id="demo2" class="collapse">
-                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
-            </div>
-        </div>
-        <div class="col-md-3">
-            <h2>Objetivo Geral</h2>
-            <p>You can easily find a web hosting.</p>
-            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo3">Saiba mais &raquo;</button>
-            <div id="demo3" class="collapse">
-                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+    <div class="container">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">O que é uma API</button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-</div>
 
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2>O que são dos Dados Abertos?</h2>
+                <p>
+                    ASP.NET MVC gives you a powerful.
+                </p>
+                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">Saiba mais &raquo;</button>
+                <div id="demo" class="collapse">
+                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h2>Qual a utilidade?</h2>
+                <p>NuGet is a free Visual Studio.</p>
+                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo1">Saiba mais &raquo;</button>
+                <div id="demo1" class="collapse">
+                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h2>Proposta do sistema</h2>
+                <p>You can easily find a web hosting.</p>
+                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo2">Saiba mais &raquo;</button>
+                <div id="demo2" class="collapse">
+                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h2>Objetivo Geral</h2>
+                <p>You can easily find a web hosting.</p>
+                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo3">Saiba mais &raquo;</button>
+                <div id="demo3" class="collapse">
+                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+                </div>
+            </div>
+        </div>
+    </div>
+    */
+    #endregion
+}
 
 @{
-#region codigos que foram usados para teste e podem ser reaproveitados
-/*
-    < div class="row">
-<div class="col-lg-4" style="width: 35rem;">
-    <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204536.jpg" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-        <a href = "#" class="card-link">Card link</a>
-        <a href = "#" class="card-link">Another link</a>
-    </div>
-</div>
-<div class="col-lg-4" style="width: 35rem;">
-    <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/160976.jpg" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-        <a href = "#" class="card-link">Card link</a>
-        <a href = "#" class="card-link">Another link</a>
-    </div>
-</div>
-<div class="col-lg-4" style="width: 35rem;">
-    <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204544.jpg" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-        <a href = "#" class="card-link">Card link</a>
-        <a href = "#" class="card-link">Another link</a>
-    </div>
-</div>
-</div>
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-<div class="row">
-<div class="col-lg-4" style="width: 35rem;">
-    <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204536.jpg" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-        <a href = "#" class="card-link">Card link</a>
-        <a href = "#" class="card-link">Another link</a>
-    </div>
-</div>
-<div class="col-lg-4" style="width: 35rem;">
-    <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/160976.jpg" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-        <a href = "#" class="card-link">Card link</a>
-        <a href = "#" class="card-link">Another link</a>
-    </div>
-</div>
-<div class="col-lg-4" style="width: 35rem;">
-    <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204544.jpg" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-        <a href = "#" class="card-link">Card link</a>
-        <a href = "#" class="card-link">Another link</a>
-    </div>
-</div>
-</div>
-
-
-
-<div class="row">
-<div class="col-md-3">
-    <h2>O que são dos Dados Abertos?</h2>
-    <p>
-        ASP.NET MVC gives you a powerful.
-    </p>
-    <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
-</div>
-<div class="col-md-3">
-    <h2>Qual a utilidade?</h2>
-    <p>NuGet is a free Visual Studio.</p>
-    <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
-</div>
-<div class="col-md-3">
-    <h2>Proposta do sistema</h2>
-    <p>You can easily find a web hosting.</p>
-    <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
-</div>
-<div class="col-md-3">
-    <h2>Objetivo Geral</h2>
-    <p>You can easily find a web hosting.</p>
-    <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
-</div>
-</div>
-
-
-<!--
-<div class="page-header">
-    <h1>Deputados Federais em exercício</h1>
-    <p class="lead">Dados fornecidos pela API de Dados Abertos da Câmara dos Deputados.</p>
-    <p><a href="https://dadosabertos.camara.leg.br/swagger/api.html#api" class="btn btn-primary btn-sm">Saiba mais &raquo;</a></p>
-</div>
-
-<div class="row">
+    #region codigos que foram usados para teste e podem ser reaproveitados
+    /*
+        < div class="row">
     <div class="col-lg-4" style="width: 35rem;">
         <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204536.jpg" alt="Card image cap">
         <div class="card-body">
@@ -245,8 +182,8 @@
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
         <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a href = "#" class="card-link">Card link</a>
+            <a href = "#" class="card-link">Another link</a>
         </div>
     </div>
     <div class="col-lg-4" style="width: 35rem;">
@@ -261,8 +198,8 @@
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
         <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a href = "#" class="card-link">Card link</a>
+            <a href = "#" class="card-link">Another link</a>
         </div>
     </div>
     <div class="col-lg-4" style="width: 35rem;">
@@ -277,126 +214,268 @@
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
         <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a href = "#" class="card-link">Card link</a>
+            <a href = "#" class="card-link">Another link</a>
         </div>
     </div>
-</div>
+    </div>
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-<div class="row">
+
+
+    <div class="row">
+    <div class="col-lg-4" style="width: 35rem;">
+        <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204536.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+            <a href = "#" class="card-link">Card link</a>
+            <a href = "#" class="card-link">Another link</a>
+        </div>
+    </div>
+    <div class="col-lg-4" style="width: 35rem;">
+        <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/160976.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+            <a href = "#" class="card-link">Card link</a>
+            <a href = "#" class="card-link">Another link</a>
+        </div>
+    </div>
+    <div class="col-lg-4" style="width: 35rem;">
+        <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204544.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+            <a href = "#" class="card-link">Card link</a>
+            <a href = "#" class="card-link">Another link</a>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="row">
     <div class="col-md-3">
-        <h2>Getting started</h2>
+        <h2>O que são dos Dados Abertos?</h2>
         <p>
             ASP.NET MVC gives you a powerful.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-3">
-        <h2>Get more libraries</h2>
+        <h2>Qual a utilidade?</h2>
         <p>NuGet is a free Visual Studio.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-3">
-        <h2>Web Hosting</h2>
+        <h2>Proposta do sistema</h2>
         <p>You can easily find a web hosting.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-3">
-        <h2>Testing</h2>
+        <h2>Objetivo Geral</h2>
         <p>You can easily find a web hosting.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
     </div>
-</div>
--->
-<!--
-<div class="row">
--->
-<!-- Carousel wrapper
-<div id="carouselMultiItemExample"
-     class="carousel slide carousel-dark text-center"
-     data-mdb-ride="carousel">
-    <!-- Controls
-    <div class="d-flex justify-content-center mb-4">
-        <button class="carousel-control-prev position-relative"
-                type="button"
-                data-mdb-target="#carouselMultiItemExample"
-                data-mdb-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next position-relative"
-                type="button"
-                data-mdb-target="#carouselMultiItemExample"
-                data-mdb-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
-    <!-- Inner
-    <div class="carousel-inner py-4">
-        <!-- Single item
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg"
-                                 class="img-responsive"
-                                 alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+
+    <!--
+    <div class="page-header">
+        <h1>Deputados Federais em exercício</h1>
+        <p class="lead">Dados fornecidos pela API de Dados Abertos da Câmara dos Deputados.</p>
+        <p><a href="https://dadosabertos.camara.leg.br/swagger/api.html#api" class="btn btn-primary btn-sm">Saiba mais &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4" style="width: 35rem;">
+            <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204536.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        <div class="col-lg-4" style="width: 35rem;">
+            <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/160976.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        <div class="col-lg-4" style="width: 35rem;">
+            <img class="card-img-top" src="https://www.camara.leg.br/internet/deputado/bandep/204544.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Testing</h2>
+            <p>You can easily find a web hosting.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>
+    -->
+    <!--
+    <div class="row">
+    -->
+    <!-- Carousel wrapper
+    <div id="carouselMultiItemExample"
+         class="carousel slide carousel-dark text-center"
+         data-mdb-ride="carousel">
+        <!-- Controls
+        <div class="d-flex justify-content-center mb-4">
+            <button class="carousel-control-prev position-relative"
+                    type="button"
+                    data-mdb-target="#carouselMultiItemExample"
+                    data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next position-relative"
+                    type="button"
+                    data-mdb-target="#carouselMultiItemExample"
+                    data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Inner
+        <div class="carousel-inner py-4">
+            <!-- Single item
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <img src="https://mdbootstrap.com/img/new/standard/nature/181.jpg"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <p class="card-text">
+                                        Some quick example text to build on the card title and make up the bulk
+                                        of the card's content.
+                                    </p>
+                                    <a href="#!" class="btn btn-primary">Button</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-4 d-none d-lg-block">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
-                                 class="img-responsive"
-                                 alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">2</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="card">
+                                <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">2</h5>
+                                    <p class="card-text">
+                                        Some quick example text to build on the card title and make up the bulk
+                                        of the card's content.
+                                    </p>
+                                    <a href="#!" class="btn btn-primary">Button</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-lg-4 d-none d-lg-block">
-                        <div class="card">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg"
-                                 class="img-responsive"
-                                 alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">3</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Button</a>
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="card">
+                                <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">3</h5>
+                                    <p class="card-text">
+                                        Some quick example text to build on the card title and make up the bulk
+                                        of the card's content.
+                                    </p>
+                                    <a href="#!" class="btn btn-primary">Button</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Inner
     </div>
-    <!-- Inner
-</div>
-<!-- Carousel wrapper
-</div>
--->
-        */
-#endregion
+    <!-- Carousel wrapper
+    </div>
+    -->
+            */
+    #endregion
 }
