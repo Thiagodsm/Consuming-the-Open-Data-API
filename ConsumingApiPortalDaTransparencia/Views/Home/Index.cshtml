@@ -4,167 +4,82 @@
 
 @model IEnumerable<ConsumingApiPortalDaTransparencia.Models.Deputados>
 
-<!-- Header-->
-<header class="py-5">
-    <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-            <div class="m-4 m-lg-5">
-                <h1 class="display-5 fw-bold">A warm welcome!</h1>
-                <p class="fs-4">Bootstrap utility classes are used to create this jumbotron since the old component has been removed from the framework. Why create custom CSS when you can use utilities?</p>
-                <a class="btn btn-primary btn-lg" href="#!">Call to action</a>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- Page Content-->
-<section class="pt-4">
-    <div class="container px-lg-5">
-        <!-- Page Features-->
-        <div class="row gx-lg-5">
-            <div class="col-lg-6 col-xxl-4 mb-5">
-                <div class="card bg-light border-0 h-100">
-                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
-                        <h2 class="fs-4 fw-bold">Fresh new layout</h2>
-                        <p class="mb-0">With Bootstrap 5, we've created a fresh new layout for this template!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xxl-4 mb-5">
-                <div class="card bg-light border-0 h-100">
-                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
-                        <h2 class="fs-4 fw-bold">Free to download</h2>
-                        <p class="mb-0">As always, Start Bootstrap has a powerful collectin of free templates.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xxl-4 mb-5">
-                <div class="card bg-light border-0 h-100">
-                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
-                        <h2 class="fs-4 fw-bold">Jumbotron hero header</h2>
-                        <p class="mb-0">The heroic part of this template is the jumbotron hero header!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xxl-4 mb-5">
-                <div class="card bg-light border-0 h-100">
-                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-bootstrap"></i></div>
-                        <h2 class="fs-4 fw-bold">Feature boxes</h2>
-                        <p class="mb-0">We've created some custom feature boxes using Bootstrap icons!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xxl-4 mb-5">
-                <div class="card bg-light border-0 h-100">
-                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-code"></i></div>
-                        <h2 class="fs-4 fw-bold">Simple clean code</h2>
-                        <p class="mb-0">We keep our dependencies up to date and squash bugs as they come!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xxl-4 mb-5">
-                <div class="card bg-light border-0 h-100">
-                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-patch-check"></i></div>
-                        <h2 class="fs-4 fw-bold">A name you trust</h2>
-                        <p class="mb-0">Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!--<div class="jumbotron">
-    <h1 class="display-4">API de Dados Abertos</h1>
-    <p class="lead">O Dados Abertos da Câmara pode ser utilizado para acompanhar a tramitação e as votações de projetos e pareceres, verificar a atuação e os gastos do deputado que você ajudou a eleger, descobrir os eventos realizados pelas comissões, e muito mais!</p>
-    <hr class="my-4">
-    <p>Veja, em explicações rápidas, o que são e como se relacionam no Dados Abertos os deputados, os partidos, os blocos, os eventos, as proposições, as votações e tudo mais nas atividades parlamentares.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Fluid jumbotron</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
 </div>
--->
-@{
-    #region html antigo
-    /*
 
-    <div class="jumbotron text-center">
-        <h1>Dados Abertos</h1>
-        <p>Dados fornecidos pela API de Dados Abertos da Câmara dos Deputados</p>
-    </div>
 
-    <div class="container">
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">O que é uma API</button>
 
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    </div>
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">O que é uma API</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
                 </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>O que são dos Dados Abertos?</h2>
+            <p>
+                ASP.NET MVC gives you a powerful.
+            </p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">Saiba mais &raquo;</button>
+            <div id="demo" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2>Qual a utilidade?</h2>
+            <p>NuGet is a free Visual Studio.</p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo1">Saiba mais &raquo;</button>
+            <div id="demo1" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2>Proposta do sistema</h2>
+            <p>You can easily find a web hosting.</p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo2">Saiba mais &raquo;</button>
+            <div id="demo2" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h2>Objetivo Geral</h2>
+            <p>You can easily find a web hosting.</p>
+            <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo3">Saiba mais &raquo;</button>
+            <div id="demo3" class="collapse">
+                Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <h2>O que são dos Dados Abertos?</h2>
-                <p>
-                    ASP.NET MVC gives you a powerful.
-                </p>
-                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo">Saiba mais &raquo;</button>
-                <div id="demo" class="collapse">
-                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h2>Qual a utilidade?</h2>
-                <p>NuGet is a free Visual Studio.</p>
-                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo1">Saiba mais &raquo;</button>
-                <div id="demo1" class="collapse">
-                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h2>Proposta do sistema</h2>
-                <p>You can easily find a web hosting.</p>
-                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo2">Saiba mais &raquo;</button>
-                <div id="demo2" class="collapse">
-                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <h2>Objetivo Geral</h2>
-                <p>You can easily find a web hosting.</p>
-                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#demo3">Saiba mais &raquo;</button>
-                <div id="demo3" class="collapse">
-                    Lorem ipsum dolor text. Some quick example text to build on the card title and make up the bulk of the card's content.
-                </div>
-            </div>
-        </div>
-    </div>
-    */
-    #endregion
-}
 
 @{
     #region codigos que foram usados para teste e podem ser reaproveitados
